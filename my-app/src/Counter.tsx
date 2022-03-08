@@ -21,7 +21,9 @@ export const Counter =()=> {
     return (
         <div className="App">
             <div>{count}</div>
-            <input type ="number" value = {value} onChange ={(e)=>{setValue(e.currentTarget.valueAsNumber)}}/>
+            <input type ="number" value = {value} onChange ={(e)=>{setValue(e.currentTarget.valueAsNumber)}}
+            autoFocus min={0} step={1}
+            />
 
         </div>
     );
