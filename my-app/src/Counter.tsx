@@ -4,7 +4,6 @@ import './App.css';
 export const Counter =()=> {
     const startNumber = 0
     const endNumber = 5
-    const [count1, setCount1] = useState(startNumber)
 
     const [value, setValue] = useState(1)
     const [count,setCount] = useState<number>(1)
@@ -18,15 +17,8 @@ export const Counter =()=> {
 
         return ()=>{clearInterval(myInterval)}
     },[value])
-    return (
-        <div className="App">
-            <div>{count}</div>
-            <input type ="number" value = {value} onChange ={(e)=>{setValue(e.currentTarget.valueAsNumber)}}
-            autoFocus min={0} max={5} step={1}
-            />
 
-        </div>
-    );
+
 
     function plus() {
         setCount(count + 1)
@@ -40,6 +32,9 @@ export const Counter =()=> {
 
         <div className={'CounterWrapper'}>
             <div className={'display'}> {count} </div>
+            <input type ="number" value = {value} onChange ={(e)=>{setValue(e.currentTarget.valueAsNumber)}}
+                   autoFocus min={0} max={5} step={1}
+            />
 
             <div className={'controls'}>
                 <button disabled = {count === endNumber} className={ 'incButton' } onClick={plus}>inc</button>
