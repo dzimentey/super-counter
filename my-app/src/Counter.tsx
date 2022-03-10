@@ -1,21 +1,21 @@
 import React, {useEffect, useState} from "react";
 import './App.css';
 
-export const Counter =()=> {
-    const startNumber = 0
-    const endNumber = 5
+export const Counter = () => {
+    const startNumber: number = 0
+    const endNumber: number = 5
 
-    const [value, setValue] = useState(1)
+    const [value, setValue] = useState<number>(1)
     const [count,setCount] = useState<number>(1)
 
-    useEffect(()=>{
+    useEffect(() => {
 
-        const myInterval = setInterval(()=>{
+        const myInterval = setInterval(() => {
 
             setCount((prevcount) => {
                 return prevcount+1})}, value * 1000)
 
-        return ()=>{clearInterval(myInterval)}
+        return () => {clearInterval(myInterval)}
     },[value])
 
 
@@ -32,7 +32,7 @@ export const Counter =()=> {
 
         <div className={'CounterWrapper'}>
             <div className={'display'}> {count} </div>
-            <input type ="number" value = {value} onChange ={(e)=>{setValue(e.currentTarget.valueAsNumber)}}
+            <input type ="number" value = {value} onChange ={(e) => {setValue(e.currentTarget.valueAsNumber)}}
                    autoFocus min={0} max={5} step={1}
             />
 
