@@ -26,18 +26,18 @@ export const Counter = () => {
 
     const reset = () => {
         setCount(startNumber)
-    };
+    }
 
     return (
 
         <div className={'CounterWrapper'}>
             <div className={'display'}> {count} </div>
-            <input type ="number" value = {value} onChange ={(e) => {setValue(e.currentTarget.valueAsNumber)}}
+            <input type ={'number'} value = {value} onChange = {(e) => {setValue(e.currentTarget.valueAsNumber)}}
                    autoFocus min={0} max={5} step={1}
             />
 
             <div className={'controls'}>
-                <button disabled = {count === endNumber} className={ 'incButton' } onClick={plus}>inc</button>
+                <button disabled = {count === endNumber} className={'incButton'} onClick={plus}>inc</button>
                 <button className={'resetButton'} onClick={reset}>reset</button>
             </div>
 
