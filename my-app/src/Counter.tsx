@@ -12,21 +12,21 @@ export const Counter = () => {
 
         const myInterval = setInterval(() => {
 
-            setCount((prevcount) => {
-                return prevcount+1})}, value * 1000)
+            setCount((prevcount: number) => {
+                return prevcount + 1})}, value * 1000)
 
         return () => {clearInterval(myInterval)}
     },[value])
 
 
 
-    function plus() {
+    const plus = () => {
         setCount(count + 1)
     }
 
-    function reset() {
+    const reset = () => {
         setCount(startNumber)
-    }
+    };
 
     return (
 
