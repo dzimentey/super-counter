@@ -1,5 +1,6 @@
-import React, {useEffect, useState} from "react";
+import React, {ChangeEvent, useEffect, useState} from "react";
 import './App.css';
+import {unstable_renderSubtreeIntoContainer} from "react-dom";
 
 export const Counter = () => {
     const startNumber: number = 0
@@ -19,7 +20,6 @@ export const Counter = () => {
     },[value])
 
 
-
     const plus = () => {
         setCount(count + 1)
     }
@@ -28,11 +28,15 @@ export const Counter = () => {
         setCount(startNumber)
     }
 
+    const onInputHandler = (e: ChangeEvent<HTMLInputElement>) => {
+        setValue(e.currentTarget.valueAsNumber)
+    }
+
     return (
 
         <div className={'CounterWrapper'}>
             <div className={'display'}> {count} </div>
-            <input type ={'number'} value = {value} onChange = {(e) => {setValue(e.currentTarget.valueAsNumber)}}
+            <input type ={'number'} value = {value} onChange = {onInputHandler}
                    autoFocus min={0} max={5} step={1}
             />
 
