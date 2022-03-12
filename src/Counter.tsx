@@ -1,6 +1,5 @@
 import React, {ChangeEvent, useEffect, useState} from "react";
 import './App.css';
-import {unstable_renderSubtreeIntoContainer} from "react-dom";
 
 export const Counter = () => {
     const startNumber: number = 0
